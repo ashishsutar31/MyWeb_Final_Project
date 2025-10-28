@@ -1,12 +1,6 @@
 pipeline {
     agent any
 
-    stages {
-        stage('git Checkout Stage') {
-            steps {
-                git 'https://github.com/ashishsutar31/MyWeb_Final_Project.git'
-            }
-        }
         stage('maven build') {
             steps {
                 sh 'mvn clean package'
