@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+    stages{
         stage('maven build') {
             steps {
                 sh 'mvn clean package'
@@ -30,6 +30,6 @@ pipeline {
                 sh "kubectl apply -f deployments.yml "
                 sh "kubectl expose deployment  --port 8080 mywebdeployment --type=NodePort"
             }
-        }
-        
+        } 
     }
+}
