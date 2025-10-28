@@ -14,21 +14,21 @@ pipeline {
         }
         stage('Docker image build') {
             steps {
-                sh 'sudo docker build . -t myimage_$BUILD_NUMBER'
+                sh 'docker build . -t myimage_$BUILD_NUMBER'
             }
         }
         stage('Docker image tag and push') {
             steps {
                 sh """
-                  sudo docker tag myimage_$BUILD_NUMBER ashishsutar/myimage_$BUILD_NUMBER
-                  sudo docker push ashishsutar/myimage_$BUILD_NUMBER
+                  docker tag myimage_$BUILD_NUMBER ashishsutar/myimage_$BUILD_NUMBER
+                  docker push ashishsutar/myimage_$BUILD_NUMBER
                    
                   """
             }
         }
         stage('Deployment image to new image') {
             steps {
-                sh "sed -I 's|ashishsutar/myimage_2|ashishsutar/myimage_$BUILD_NUMBER|g' deployments.yml"
+                sh "sed -i 's|ashishsutar/myimage ashishsutar/myimage_$BUILD_NUMBER|g' deployments.yml"
             }
         }
         stage('Kubernetes Deployment') {
