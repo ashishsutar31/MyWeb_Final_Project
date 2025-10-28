@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('git Checkout Stage') {
             steps {
-                git 'https://github.com/shubham93096/myweb.git'
+                git 'https://github.com/ashishsutar31/MyWeb_Final_Project.git'
             }
         }
         stage('maven build') {
@@ -20,15 +20,15 @@ pipeline {
         stage('Docker image tag and push') {
             steps {
                 sh """
-                  sudo docker tag myimage_$BUILD_NUMBER shubham7890/myimage_$BUILD_NUMBER
-                  sudo docker push shubham7890/myimage_$BUILD_NUMBER
+                  sudo docker tag myimage_$BUILD_NUMBER ashishsutar/myimage_$BUILD_NUMBER
+                  sudo docker push ashishsutar/myimage_$BUILD_NUMBER
                    
                   """
             }
         }
         stage('Deployment image to new image') {
             steps {
-                sh "sed -I 's|shubham7890/myimage_2|shubham7890/myimage_$BUILD_NUMBER|g' deployments.yml"
+                sh "sed -I 's|ashishsutar/myimage_2|ashishsutar/myimage_$BUILD_NUMBER|g' deployments.yml"
             }
         }
         stage('Kubernetes Deployment') {
