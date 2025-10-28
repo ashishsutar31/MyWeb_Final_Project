@@ -1,54 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-4.0.0
-in.javahome
-myweb
-war
-8.2.17-SNAPSHOT
-Java Home myweb
-http://maven.apache.org
+    <groupId>in.javahome</groupId>
+    <artifactId>myweb</artifactId>
+    <packaging>war</packaging>
+    <version>8.2.17-SNAPSHOT</version>
+    <name>Java Home myweb</name>
+    <url>http://maven.apache.org</url>
 
+    <properties>
+        <sonar.host.url>http://54.158.180.253:9000/</sonar.host.url>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
-org.apache.maven.plugins
-maven-compiler-plugin
-3.10.1
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>
+            </plugin>
+        </plugins>
+    </build>
 
+    <repositories>
+        <repository>
+            <id>nexusRepo-snapshots</id>
+            <url>http://44.203.143.21:8081/repository/maven-snapshots/</url>
+        </repository>
+        <repository>
+            <id>nexusRepo-releases</id>
+            <url>http://44.203.143.21:8081/repository/maven-releases/</url>
+        </repository>
+        <repository>
+            <id>maven1</id>
+            <name>Maven.org</name>
+            <url>http://repo1.maven.org/maven2</url>
+        </repository>
+    </repositories>
 
-org.apache.maven.plugins
-maven-war-plugin
-3.3.2
-
-
-
-
-kammana
-http://54.158.180.253:9000/
-1.8
-1.8
-
-
-
-junit
-junit
-3.8.1
-test
-
-
-
-
-nexusRepo
-http://44.203.143.21:8081/repository/maven-snapshots/
-
-
-nexusRepo
-http://44.203.143.21:8081/repository/maven-releases/
-
-
-
-
-maven1
-Maven.org
-http://repo1.maven.org/maven2
-
-
-
+</project>
