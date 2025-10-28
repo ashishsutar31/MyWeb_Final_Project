@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Deployment image to new image') {
             steps {
-                sh "sed -i 's|ashishsutar/myimage ashishsutar/myimage_$BUILD_NUMBER|g' deployments.yml"
+                sh "sed -i 's|ashishsutar/myimage|ashishsutar/myimage_$BUILD_NUMBER|g' deployments.yml"
             }
         }
         stage('Kubernetes Deployment') {
