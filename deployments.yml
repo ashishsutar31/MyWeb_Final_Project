@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: myweb
-        image: ashishsutar/myimage_2
+        image: ashishsutar/myimage:latest
         ports:
         - containerPort: 8080
