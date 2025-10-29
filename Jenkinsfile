@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Kubernetes Deployment') {
             steps {
-                sh "kubectl apply -f deployment.yaml"
+                sh "kubectl apply -f deployments.yml"
                 sh "kubectl get svc mywebdeployment || kubectl expose deployment mywebdeployment --type=NodePort --port=8080"
             }
         } 
