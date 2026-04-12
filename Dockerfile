@@ -1,4 +1,4 @@
-FROM tomcat:8.0.20-jre8
+FROM tomcat:9-jdk17
 # Dummy text to test 
 COPY target/appweb*.war /usr/local/tomcat/webapps/appweb.war
 
