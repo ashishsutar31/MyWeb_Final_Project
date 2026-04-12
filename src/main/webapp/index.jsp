@@ -113,7 +113,7 @@
   <div class="container">
     <header class="header">
       <h1>ASHISH SUTAR</h1>
-      <h1>Final Project</h1>
+      <h1>Ashish Final Project</h1>
       <div class="social">
         <a href="#"><i class="fab fa-facebook"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
